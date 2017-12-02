@@ -10,10 +10,14 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $ws1 1:
+set $ws2 2:
+set $ws3 3:
+set $ws4 4:
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Sounce han code JP EL 10
+font pango:Sounce han code JP EL 13 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -30,7 +34,7 @@ font pango:Sounce han code JP EL 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec tym
+bindsym $mod+Return exec sakura
 # kill focused window
 bindsym $mod+q kill
 
@@ -92,10 +96,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -104,10 +108,10 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -120,7 +124,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exit
+bindsym $mod+Shift+q exec "sh /opt/script/kill.sh"
 
 ##custom_zone
 #workspace_layout stacking
@@ -140,8 +144,20 @@ exec --no-startup-id "feh --bg-scale /usr/share/pixmap/lain\ wall.png"
 exec --no-startup-id "/opt/script/mu.sh"
 exec --no-startup-id "/opt/script/micmu.sh"
 exec --no-startup-id "fcitx"
-exec --no-startup-id "volumeicon"
+exec --no-startup-id "compton --config .config/compton/compton.conf"
 exec --no-startup-id "nm-applet"
+exec --no-startup-id "blueman-applet"
+exec --no-startup-id "xss-lock -- i3lock -n -i /usr/share/pixmaps/lain.png &"
+new_window none
+gaps inner 5
+assign [class="Firefox"] $ws2
+assign [class="Subl"] $ws3
+assign [class="Slack"] $ws4
+exec --no-startup-id sakura 
+exec --no-startup-id firefox
+exec --no-startup-id subl
+exec --no-startup-id slack
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -171,6 +187,12 @@ bindsym $mod+p mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+	colors{
+	background #303030
+	statusline #FFFFFF
+	separator #ff9944
+}
+	separator_symbol ""
+        status_command i3status 
 	position top
 }
