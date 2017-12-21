@@ -158,12 +158,13 @@ assign [class="Firefox"] $ws2
 assign [class="Subl"] $ws3
 assign [class="Atom"] $ws3
 assign [class="Slack"] $ws4
-assign [class="Android-studio"]$ws5
+assign [class="jetbrains-studio"]$ws5
 exec --no-startup-id sakura 
 exec --no-startup-id firefox
 exec --no-startup-id subl
 exec --no-startup-id atom
 exec --no-startup-id slack
+exec --no-startup-id android-studio
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
