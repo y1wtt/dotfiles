@@ -93,3 +93,5 @@ set wildmenu " コマンドモードの補完
 set history=5000 " 保存するコマンド履歴の数
 
 let g:indentLine_setColors = 0
+let g:airline_powerline_fonts = 1
+set laststatus=2
