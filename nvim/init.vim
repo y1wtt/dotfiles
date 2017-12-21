@@ -92,15 +92,4 @@ set background=dark
 set wildmenu " コマンドモードの補完
 set history=5000 " 保存するコマンド履歴の数
 
-if &term =~ "sakura"
-	let &t_SI .= "\e[?2004h"
-	let &t_EI .= "\e[?2004l"
-	let &pastetoggle = "\e[201~"
-	function XTermPasteBegin(ret)
-		set paste
-		return a:ret
-		endfunction
-	inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
-endif
-
 let g:indentLine_setColors = 0
