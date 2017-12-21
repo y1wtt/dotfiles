@@ -2,7 +2,7 @@ let s:dein_dir = expand('~/.vim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if &compatible
-  set nocompatible
+	set nocompatible
 endif
 
 if !isdirectory(s:dein_repo_dir)
@@ -12,7 +12,6 @@ endif
 execute 'set runtimepath^=' . s:dein_repo_dir
 
 call dein#begin(s:dein_dir)
-
 "ここにプラグインを追加
 call dein#add('Shougo/dein.vim')
 call dein#add('vim-airline/vim-airline')
@@ -21,6 +20,7 @@ call dein#add('udalov/kotlin-vim')
 call dein#add('cohama/lexima.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('w0ng/vim-hybrid')
+call dein#add('Yggdroot/indentLine')
 
 "call dein#load_toml('~/.vim/dein/rc/dein.toml')
 "call dein#load_toml('~/.vim/dein/rc/dein_lazy.toml')
@@ -70,8 +70,8 @@ nnoremap k gk
 
 
 " Tab系
-" 不可視文字を可視化
-set list listchars=tab:\･\･
+" 不可視文字を可視
+"set list listchars=tab:\ \:
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=3
 " 行頭でのTab文字の表示幅
@@ -103,4 +103,4 @@ if &term =~ "sakura"
 	inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
-
+let g:indentLine_setColors = 0
