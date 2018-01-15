@@ -4,4 +4,6 @@ open_with nomacs
 find firefo
 open_with vim
 hide
+search Pic
+search pic
 
