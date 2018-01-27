@@ -25,7 +25,7 @@ wireless _first_ {
 }
 volume master {
         format = "♪: %volume"
-        format_muted = "♪: Muted"
+        format_muted = "♪: Mute(%volume)"
         device = "default"
         mixer = "Master"
         mixer_idx = 1

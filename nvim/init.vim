@@ -20,7 +20,8 @@ call dein#add('udalov/kotlin-vim')
 call dein#add('cohama/lexima.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('w0ng/vim-hybrid')
-call dein#add('Yggdroot/indentLine')
+call dein#add('rust-lang/rust.vim')
+"call dein#add('Yggdroot/indentLine')
 
 "call dein#load_toml('~/.vim/dein/rc/dein.toml')
 "call dein#load_toml('~/.vim/dein/rc/dein_lazy.toml')
@@ -52,8 +53,12 @@ set showcmd
 " 見た目系
 " 行番号を表示
 set number
-" 現在の行を強調表示
+" カレント行ハイライト
 set cursorline
+" アンダーラインを引く(color terminal)
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+" アンダーラインを引く(gui)
+highlight CursorLine gui=underline guifg=NONE guibg=NONE
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
