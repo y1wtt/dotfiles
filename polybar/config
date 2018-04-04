@@ -23,6 +23,9 @@ height = 30
 radius = 5
 fixed-center = false
 
+
+monitor = ${env:MONITOR:}
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
