@@ -43,7 +43,7 @@ bindsym $mod+Return exec sakura
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec "rofi -show run"
+bindsym $mod+r exec "rofi -show"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -68,10 +68,10 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left 200px
+bindsym $mod+Shift+Down move down 200px
+bindsym $mod+Shift+Up move up 200px
+bindsym $mod+Shift+Right move right 200px
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -126,17 +126,18 @@ bindsym $mod+Shift+0 move container to workspace 10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec sh /opt/script/restart.sh
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exec "sh /opt/script/kill.sh"
+bindsym $mod+Shift+q exec "i3-msg exit"
 
 ##custom_zone
 #workspace_layout stacking
 bindcode 107 exec deepin-screenshot
-bindcode 121 exec "/opt/script/mu.sh"
-bindcode 123 exec "/opt/script/volup.sh"
-bindcode 122 exec "/opt/script/voldw.sh"
-bindcode 198 exec "/opt/script/micmu.sh"
+bindcode 121 exec amixer set Master toggle
+bindcode 123 exec amixer set Master 5%+
+bindcode 122 exec amixer set Master 5%-
+bindcode 198 exec amixer set Capture toggle
 bindcode 233 exec "xbacklight -inc 10"
 bindcode 232 exec "xbacklight -dec 10"
 bindsym $mod+Prior workspace prev
@@ -144,7 +145,7 @@ bindsym $mod+Next workspace next
 bindsym $mod+w exec "rofi -show window"
 bindsym $mod+l exec "dm-tool lock"
 
-exec --no-startup-id "feh --bg-fill /usr/share/pixmap/lain\ wall.png"
+exec --no-startup-id "feh --bg-fill /usr/share/pixmaps/yayoi.PNG"
 exec --no-startup-id "amixer set Master mute"
 exec --no-startup-id "amixer set Capture mute "
 exec --no-startup-id "fcitx"
@@ -152,7 +153,6 @@ exec --no-startup-id "/usr/lib/notification-daemon-1.0/notification-daemon"
 exec --no-startup-id "compton --config .config/compton/compton.conf"
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
-exec --no-startup-id "volumeicon"
 
 new_window none
 gaps inner 10
@@ -196,15 +196,16 @@ mode "resize" {
 
 bindsym $mod+p mode "resize"
 
+exec --no-startup-id "polybar example"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	colors{
-	background #303030
-	statusline #FFFFFF
-	separator #ff9944
-}
-	separator_symbol ""
-        status_command i3status 
-	position top
-}
+#bar {
+#	colors{
+#	background #303030
+#	statusline #FFFFFF
+#	separator #ff9944
+#}
+#	separator_symbol ""
+#        status_command i3status 
+#	position top
+#}

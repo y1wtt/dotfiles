@@ -6,4 +6,7 @@ open_with vim
 hide
 search Pic
 search pic
+remove
+rm
 
+delete

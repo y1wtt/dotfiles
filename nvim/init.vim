@@ -21,6 +21,7 @@ call dein#add('cohama/lexima.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('rust-lang/rust.vim')
+call dein#add('fatih/vim-go')
 "call dein#add('Yggdroot/indentLine')
 
 "call dein#load_toml('~/.vim/dein/rc/dein.toml')
