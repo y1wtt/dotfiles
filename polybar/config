@@ -47,7 +47,7 @@ font-2 = Noto Sans Symbols2:size=12
 
 modules-left = i3
 modules-center = 
-modules-right = cpu memory wlan eth battery temperature date powermenu
+modules-right = volume cpu memory wlan eth battery temperature date powermenu
 
 tray-position = none
 tray-padding = 0
@@ -243,6 +243,7 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
+
 ; Available tags:
 ;   <label-volume> (default)
 ;   <ramp-volume>
@@ -277,12 +278,12 @@ ramp-volume-2 = 🔊
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #ff9944
-bar-volume-gradient = false
+bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = -
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = -
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
