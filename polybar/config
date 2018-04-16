@@ -47,7 +47,7 @@ font-2 = Noto Sans Symbols2:size=12
 
 modules-left = i3
 modules-center = 
-modules-right = volume cpu memory wlan eth battery temperature date powermenu
+modules-right = cpu memory wlan eth battery temperature date powermenu
 
 tray-position = none
 tray-padding = 0
@@ -237,7 +237,7 @@ label = %gb_used%
 
 [module/wlan]
 type = internal/network
-interface = wlp4s0
+interface = wlan0
 interval = 1
 
 format-connected = <label-connected>
@@ -254,7 +254,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s31f6
+interface = eth0
 interval = 1
 
 format-connected-underline = #ff9944
@@ -332,7 +332,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = BAT1
 adapter = AC
 full-at = 95
 
