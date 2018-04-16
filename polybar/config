@@ -8,7 +8,7 @@
 ;=====================================================
 
 [colors]
-background = #222
+background = #A0303030
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #dfdfdf
@@ -47,7 +47,7 @@ font-2 = Noto Sans Symbols2:size=12
 
 modules-left = i3
 modules-center = 
-modules-right = volume cpu memory wlan eth battery temperature date powermenu
+modules-right = cpu memory wlan eth volume battery temperature date powermenu
 
 tray-position = none
 tray-padding = 0
@@ -243,6 +243,8 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
+format-volume-underline = #ff9944
+format-muted-underline = #999999
 
 ; Available tags:
 ;   <label-volume> (default)
