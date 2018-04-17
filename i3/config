@@ -37,6 +37,8 @@ bindsym $mod+Control+Up move up 200px
 bindsym $mod+Control+Right move right 200px
 
 bindsym $mod+Shift+Left move workspace to output left
+bindsym $mod+Shift+Down move workspace to output up
+bindsym $mod+Shift+Up move workspace to output down
 bindsym $mod+Shift+Right move workspace to output right
 
 # split in horizontal orientation
