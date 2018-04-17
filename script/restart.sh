@@ -1,2 +1,2 @@
 i3-msg restart
-polybar-msg cmd -restart
+sh ~/.config/polybar/poly.sh
