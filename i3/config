@@ -96,20 +96,22 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r exec sh ~/.config/script/restart.sh
 
 
-#workspace_layout stacking
+#PrintScreen
 bindcode 107 exec deepin-screenshot
+
 bindcode 121 exec amixer set Master toggle
 bindcode 123 exec amixer set Master 5%+
 bindcode 122 exec amixer set Master 5%-
 bindcode 198 exec amixer set Capture toggle
-bindcode 233 exec "xbacklight -inc 10"
-bindcode 232 exec "xbacklight -dec 10"
+bindcode 233 exec "xbacklight -inc 5"
+bindcode 232 exec "xbacklight -dec 5"
 bindsym $mod+Prior workspace prev
 bindsym $mod+Next workspace next
 bindsym $mod+w exec "rofi -show window"
 bindsym $mod+l exec "dm-tool lock"
 
-exec --no-startup-id "feh --bg-fill /usr/share/pixmaps/yayoi.PNG"
+exec --no-startup-id "sh /home/awataki/.screenlayout/def.sh"
+exec --no-startup-id "sh ~/.config/script/feh.sh"
 exec --no-startup-id "amixer set Master mute"
 exec --no-startup-id "amixer set Capture mute "
 exec --no-startup-id "fcitx"
@@ -117,7 +119,7 @@ exec --no-startup-id "/usr/lib/notification-daemon-1.0/notification-daemon"
 exec --no-startup-id "compton --config .config/compton/compton.conf"
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
-exec --no-startup-id stalonetray --dockapp-mode simple
+#exec --no-startup-id stalonetray --dockapp-mode simple
 exec --no-startup-id volumeicon
 
 new_window none
@@ -128,13 +130,14 @@ assign [class="Atom"] $ws3
 assign [class="Slack"] $ws4
 assign [class="jetbrains-studio"]$ws5
 assign [class="Steam"]$ws6
-exec --no-startup-id sakura 
+exec --no-startup-id i3-msg 'workspace1:;exec sakura'
+exec --no-startup-id i3-msg 'workspace1:;exec stalonetray'
 exec --no-startup-id firefox
 exec --no-startup-id subl
-#exec --no-startup-id atom
 exec --no-startup-id slack
+#exec --no-startup-id atom
 #exec --no-startup-id studio.sh
 #exec --no-startup-id steam
 
 
-exec --no-startup-id sh ~/.config/polybar/poly.sh
+exec --no-startup-id sh ~/.config/script/bar.sh
