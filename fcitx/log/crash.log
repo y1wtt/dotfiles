@@ -1,1 +1,6 @@
-fcitx: BadWindow (invalid Window parameter)
+=========================
+FCITX 4.2.9.5 -- Get Signal No.: 11
+Date: try "date -d @1524009089" if you are using GNU date ***
+ProcessID: 472
+fcitx(+0x145e)[0x55ec280c845e]
+/usr/lib/libc.so.6(+0x348e0)[0x7f6f1b12a8e0]

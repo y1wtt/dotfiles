@@ -12,7 +12,7 @@ set $ws6 6:
 set $ws7 7:
 
 # fonts
-font pango:Noto Sans Mono 13 
+font pango:Awa Sans Mono 13 
 
 #keys
 #Launch Terminal
@@ -26,6 +26,7 @@ bindsym $mod+Shift+q exec "i3-msg exit"
 bindsym $mod+r exec "rofi -show"
 
 
+#Window Control
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -41,33 +42,22 @@ bindsym $mod+Shift+Down move workspace to output up
 bindsym $mod+Shift+Up move workspace to output down
 bindsym $mod+Shift+Right move workspace to output right
 
-# split in horizontal orientation
+#Split
 bindsym $mod+h split h
-
-# split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+#Toggle modes
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
 
-# change container layout (stacked, tabbed, toggle split)
+
+# Container Layout
 bindsym $mod+s layout stacking
 bindsym $mod+d layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
-# switch to workspace
+#Workspace Control
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -79,7 +69,6 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -91,10 +80,8 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r exec sh ~/.config/script/restart.sh
-
+bindsym $mod+Shift+c reload
 
 #PrintScreen
 bindcode 107 exec deepin-screenshot

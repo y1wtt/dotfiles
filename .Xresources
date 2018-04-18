@@ -20,6 +20,6 @@ rofi.yoffset: 0
 rofi.fake-transparency: false
 rofi.location: 0
 rofi.width: 1000
-rofi.font:Noto Sans Mono 15
+rofi.font:Awa Sans Mono 15
 rofi.lines: 15
 rofi.fixed-num-lines: true
