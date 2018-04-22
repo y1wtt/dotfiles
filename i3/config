@@ -106,7 +106,6 @@ exec --no-startup-id "/usr/lib/notification-daemon-1.0/notification-daemon"
 exec --no-startup-id "compton --config .config/compton/compton.conf"
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
-#exec --no-startup-id stalonetray --dockapp-mode simple
 exec --no-startup-id volumeicon
 
 new_window none

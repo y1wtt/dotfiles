@@ -244,10 +244,6 @@ format-connected-prefix = "  "
 format-connected-underline = #ff9944
 label-connected = %essid% : %local_ip%
 
-format-disconnected = <label-disconnected>
-format-disconnected-underline = #999999
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-foreground = ${colors.foreground-alt}
 
@@ -262,10 +258,10 @@ format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %linkspeed% : %local_ip%
 
 ;format-disconnected =
-format-disconnected = <label-disconnected>
-format-disconnected-underline = #999999
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = #999999
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -426,3 +422,4 @@ margin-top = 0
 margin-bottom = 0
 
 ; vim:ft=dosini
+
