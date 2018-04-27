@@ -32,15 +32,15 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $mod+Control+Left move left 200px
-bindsym $mod+Control+Down move down 200px
-bindsym $mod+Control+Up move up 200px
-bindsym $mod+Control+Right move right 200px
+bindsym $mod+Shift+Left move left 200px
+bindsym $mod+Shift+Down move down 200px
+bindsym $mod+Shift+Up move up 200px
+bindsym $mod+Shift+Right move right 200px
 
-bindsym $mod+Shift+Left move workspace to output left
-bindsym $mod+Shift+Down move workspace to output up
-bindsym $mod+Shift+Up move workspace to output down
-bindsym $mod+Shift+Right move workspace to output right
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Down move workspace to output up
+bindsym $mod+Control+Up move workspace to output down
+bindsym $mod+Control+Right move workspace to output right
 
 #Split
 bindsym $mod+h split h
