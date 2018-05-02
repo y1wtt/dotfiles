@@ -110,7 +110,7 @@ exec --no-startup-id volumeicon
 
 new_window none
 gaps inner 10
-assign [class="Nightly"] $ws2
+assign [class="Firefox"] $ws2
 assign [class="Subl"] $ws3
 assign [class="Atom"] $ws3
 assign [class="Slack"] $ws4
