@@ -127,25 +127,25 @@ bindcode 233 exec "xbacklight -inc 5"
 bindcode 232 exec "xbacklight -dec 5"
 
 #Start Up
-exec --no-startup-id "sh /home/awataki/.screenlayout/def.sh"
-exec --no-startup-id "sh ~/.config/script/feh.sh"
+exec --no-startup-id sh /home/awataki/.screenlayout/def.sh
+exec --no-startup-id sh ~/.config/script/feh.sh
+exec --no-startup-id sh ~/.config/script/bar.sh
+
 exec --no-startup-id "amixer set Master mute"
 exec --no-startup-id "amixer set Capture mute "
+
 exec --no-startup-id "fcitx"
 exec --no-startup-id "/usr/lib/notification-daemon-1.0/notification-daemon"
 exec --no-startup-id "compton --config .config/compton/compton.conf"
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
 exec --no-startup-id volumeicon
+
 exec --no-startup-id i3-msg 'workspace1:;exec sakura'
 exec --no-startup-id i3-msg 'workspace1:;exec stalonetray'
+
 exec --no-startup-id firefox
 exec --no-startup-id subl
 exec --no-startup-id slack
 #exec --no-startup-id atom
 exec --no-startup-id studio.sh
-exec --no-startup-id sh ~/.config/script/bar.sh
-
-
-
-
