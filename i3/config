@@ -10,6 +10,21 @@ set $ws4 4:
 set $ws5 5:
 set $ws6 6:
 set $ws7 7:
+set $ws8 8:
+set $ws9 9:
+set $ws0 0:
+
+#Window Style
+new_window none
+gaps inner 10
+
+
+#Special Apps Format
+assign [class="Firefox"] $ws2
+assign [class="Subl"] $ws3
+assign [class="Atom"] $ws3
+assign [class="Slack"] $ws4
+assign [class="jetbrains-studio"]$ws5
 
 # fonts
 font pango:Awa Sans Mono 13 
@@ -23,8 +38,8 @@ bindsym $mod+q kill
 bindsym $mod+Shift+q exec "i3-msg exit"
 
 #Launch rofi (Launcher)
-bindsym $mod+r exec "rofi -show"
-
+bindsym $mod+r exec "rofi -show" #Show all of command
+bindsym $mod+w exec "rofi -show window" #Show window list
 
 #Window Control
 bindsym $mod+Left focus left
@@ -32,15 +47,12 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+#Float Window Controll
 bindsym $mod+Shift+Left move left 200px
 bindsym $mod+Shift+Down move down 200px
 bindsym $mod+Shift+Up move up 200px
 bindsym $mod+Shift+Right move right 200px
 
-bindsym $mod+Control+Left move workspace to output left
-bindsym $mod+Control+Down move workspace to output up
-bindsym $mod+Control+Up move workspace to output down
-bindsym $mod+Control+Right move workspace to output right
 
 #Split
 bindsym $mod+h split h
@@ -57,7 +69,7 @@ bindsym $mod+s layout stacking
 bindsym $mod+d layout tabbed
 bindsym $mod+e layout toggle split
 
-#Workspace Control
+#Switch Workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -65,10 +77,23 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
 
+#Switch next to Workspace
+bindsym $mod+Prior workspace prev
+bindsym $mod+Next workspace next
+
+
+#Workspace Move
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Down move workspace to output up
+bindsym $mod+Control+Up move workspace to output down
+bindsym $mod+Control+Right move workspace to output right
+
+
+#Move Other Workspaces
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -76,27 +101,30 @@ bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
 
+#Restart i3
 bindsym $mod+Shift+r exec sh ~/.config/script/restart.sh
+
+#Reload config
 bindsym $mod+Shift+c reload
 
 #PrintScreen
 bindcode 107 exec deepin-screenshot
 
+#Controll Volume
 bindcode 121 exec amixer set Master toggle
 bindcode 123 exec amixer set Master 5%+
 bindcode 122 exec amixer set Master 5%-
 bindcode 198 exec amixer set Capture toggle
+
+#Controll BackLight
 bindcode 233 exec "xbacklight -inc 5"
 bindcode 232 exec "xbacklight -dec 5"
-bindsym $mod+Prior workspace prev
-bindsym $mod+Next workspace next
-bindsym $mod+w exec "rofi -show window"
-bindsym $mod+l exec "dm-tool lock"
 
+#Start Up
 exec --no-startup-id "sh /home/awataki/.screenlayout/def.sh"
 exec --no-startup-id "sh ~/.config/script/feh.sh"
 exec --no-startup-id "amixer set Master mute"
@@ -107,23 +135,15 @@ exec --no-startup-id "compton --config .config/compton/compton.conf"
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
 exec --no-startup-id volumeicon
-
-new_window none
-gaps inner 10
-assign [class="Firefox"] $ws2
-assign [class="Subl"] $ws3
-assign [class="Atom"] $ws3
-assign [class="Slack"] $ws4
-assign [class="jetbrains-studio"]$ws5
-assign [class="Steam"]$ws6
 exec --no-startup-id i3-msg 'workspace1:;exec sakura'
 exec --no-startup-id i3-msg 'workspace1:;exec stalonetray'
 exec --no-startup-id firefox
 exec --no-startup-id subl
 exec --no-startup-id slack
 #exec --no-startup-id atom
-#exec --no-startup-id studio.sh
-#exec --no-startup-id steam
-
-
+exec --no-startup-id studio.sh
 exec --no-startup-id sh ~/.config/script/bar.sh
+
+
+
+
