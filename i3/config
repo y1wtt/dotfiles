@@ -38,8 +38,10 @@ bindsym $mod+q kill
 bindsym $mod+Shift+q exec "i3-msg exit"
 
 #Launch rofi (Launcher)
-bindsym $mod+r exec "rofi -show" #Show all of command
-bindsym $mod+w exec "rofi -show window" #Show window list
+#Show all of command
+bindsym $mod+r exec "rofi -show" 
+#Show window list
+bindsym $mod+w exec "rofi -show window" 
 
 #Window Control
 bindsym $mod+Left focus left

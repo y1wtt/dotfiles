@@ -47,7 +47,7 @@ font-2 = Noto Sans Symbols2:size=12
 
 modules-left = i3
 modules-center = 
-modules-right = cpu memory wlan eth volume xbacklight battery temperature date
+modules-right = nm-applet cpu memory wlan eth volume xbacklight battery temperature date
 
 tray-position = right
 tray-padding = 0
@@ -410,6 +410,14 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+[module/nm-applet]
+type = custom/script
+interval = 1200
+format = <label>
+label = "hg"
+exec = ~/.config/script/nm.sh
+
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -422,4 +430,3 @@ margin-top = 0
 margin-bottom = 0
 
 ; vim:ft=dosini
-
