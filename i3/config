@@ -31,7 +31,7 @@ font pango:Awa Sans Mono 13
 
 #keys
 #Launch Terminal
-bindsym $mod+Return exec sakura
+bindsym $mod+Return exec urxvtc
 
 #Quits
 bindsym $mod+q kill
@@ -141,8 +141,7 @@ exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
 exec --no-startup-id volumeicon
 
-exec --no-startup-id i3-msg 'workspace1:;exec sakura'
-exec --no-startup-id i3-msg 'workspace1:;exec stalonetray'
+exec --no-startup-id i3-msg 'workspace1:;exec urxvtd -o -f'
 
 exec --no-startup-id firefox
 exec --no-startup-id subl

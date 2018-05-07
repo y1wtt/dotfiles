@@ -4,7 +4,7 @@ rofi.combi-modi:window,run,ssh
 rofi.show:combi
 rofi.color-enabled: true
 !                  bg             border   separator
-rofi.color-window: argb:af303030, argb:00000000,  900000,
+rofi.color-window: argb:af202020, argb:00000000,  900000,
 !                  bg             fg       bg-alt   hl-bg    hl-fg
 rofi.color-normal: argb:00000000, #FFFFFF, 000000, 000000,   #f8ae19
 rofi.color-active: argb:00000000, #FFFFFF, argb:00000000,   argb:00000000, #ff9944
@@ -23,3 +23,8 @@ rofi.width: 1000
 rofi.font:Awa Sans Mono 15
 rofi.lines: 15
 rofi.fixed-num-lines: true
+
+URxvt.background: #202020
+URxvt.foreground: #ff9944
+URxvt.font	:xft:Awa Sans Mono:pixelsize=17:antialias=true:hinting=true
+URxvt.font	:xft:Noto Mono for Powerline:pixelsize=17:antialias=true:hinting=true
