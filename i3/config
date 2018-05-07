@@ -31,7 +31,7 @@ font pango:Awa Sans Mono 13
 
 #keys
 #Launch Terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec sh ~/.config/script/urxvt.sh
 
 #Quits
 bindsym $mod+q kill
@@ -141,10 +141,20 @@ exec --no-startup-id "nm-applet"
 exec --no-startup-id "blueman-applet"
 exec --no-startup-id volumeicon
 
-exec --no-startup-id i3-msg 'workspace1:;exec urxvtd -o -f'
+exec --no-startup-id i3-msg 'workspace$ws1;exec sh ~/.config/script/urxvt.sh'
 
 exec --no-startup-id firefox
 exec --no-startup-id subl
 exec --no-startup-id slack
 #exec --no-startup-id atom
 exec --no-startup-id studio.sh
+
+bar{
+	strip_workspace_numbers yes
+	status_command i3blocks
+	position top
+	colors{
+		background #303030
+		statusline #ff9944
+}
+}

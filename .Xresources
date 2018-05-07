@@ -26,5 +26,4 @@ rofi.fixed-num-lines: true
 
 URxvt.background: #202020
 URxvt.foreground: #ff9944
-URxvt.font	:xft:Awa Sans Mono:pixelsize=17:antialias=true:hinting=true
 URxvt.font	:xft:Noto Mono for Powerline:pixelsize=17:antialias=true:hinting=true
