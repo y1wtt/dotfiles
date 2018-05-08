@@ -148,13 +148,3 @@ exec --no-startup-id subl
 exec --no-startup-id slack
 #exec --no-startup-id atom
 exec --no-startup-id studio.sh
-
-bar{
-	strip_workspace_numbers yes
-	status_command i3blocks
-	position top
-	colors{
-		background #303030
-		statusline #ff9944
-}
-}
