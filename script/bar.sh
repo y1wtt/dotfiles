@@ -1,5 +1,12 @@
 #!/bin/bash
-sleep 1
+
+
+
+
+
+
+
+# start up bar
 killall polybar
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
@@ -8,5 +15,3 @@ if type "xrandr"; then
 else
   polybar --reload top &
 fi
-
-
