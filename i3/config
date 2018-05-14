@@ -136,7 +136,6 @@ exec --no-startup-id fcitx-autostart
 exec --no-startup-id sh ~/.config/script/start.sh
 exec --no-startup-id "compton --config .config/compton/compton.conf"
 exec --no-startup-id "nm-applet"
-exec --no-startup-id "jetbrains-toolbox"
 
 exec --no-startup-id i3-msg 'workspace$ws1;exec sakura'
 exec --no-startup-id firefox

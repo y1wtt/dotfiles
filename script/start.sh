@@ -4,3 +4,4 @@ feh --bg-fill /usr/share/pixmaps/yayoi.PNG
 sh ~/.config/script/bar.sh
 sleep 1
 google-drive-ocamlfuse ~/GoogleDrive/
+jetbrains-toolbox
