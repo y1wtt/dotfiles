@@ -5,7 +5,7 @@
 
 
 
-
+sleep 1
 # start up bar
 killall polybar
 if type "xrandr"; then
