@@ -1,15 +1,9 @@
 #!/bin/bash
-
-
-
-
-
-
-sleep 1
 # start up bar
-killall polybar
+killall polybar &
+wait
 if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+  for m in $(/usr/bin/xrandr|grep " connected"|awk -F " " '{print $1}'); do
     MONITOR=$m polybar --reload top &
   done
 else

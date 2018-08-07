@@ -1,2 +1,4 @@
-i3-msg restart
-sh ~/.config/script/bar.sh
+#!/bin/sh
+i3-msg restart 
+wait
+sh ~/.config/script/start.sh

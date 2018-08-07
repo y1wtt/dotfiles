@@ -16,15 +16,13 @@ set $ws0 0:
 
 #Window Style
 new_window none
-gaps inner 10
 
 
 #Special Apps Format
 assign [class="Firefox"] $ws2
-assign [class="Subl"] $ws3
+#assign [class="Subl"] $ws3
 assign [class="Atom"] $ws3
 assign [class="Slack"] $ws4
-assign [class="jetbrains-studio"]$ws5
 
 # fonts
 font pango:Awa Sans Mono 13 
@@ -63,7 +61,7 @@ bindsym $mod+v split v
 #Toggle modes
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Ctrl+space focus mode_toggle
 
 
 # Container Layout
@@ -131,13 +129,12 @@ bindcode 232 exec "xbacklight -dec 5"
 exec --no-startup-id "amixer set Master mute"
 exec --no-startup-id "amixer set Capture mute "
 
-#StartUps
+#StartUps(next:to Script)
 exec --no-startup-id fcitx-autostart
 exec --no-startup-id sh ~/.config/script/start.sh
 exec --no-startup-id "compton --config .config/compton/compton.conf"
-exec --no-startup-id "nm-applet"
 
-exec --no-startup-id i3-msg 'workspace$ws1;exec sakura'
+exec --no-startup-id i3-msg 'workspace$ws3;exec subl'
 exec --no-startup-id firefox
-exec --no-startup-id subl
 exec --no-startup-id slack
+exec --no-startup-id i3-msg 'workspace$ws1;exec sakura'
