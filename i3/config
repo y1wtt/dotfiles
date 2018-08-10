@@ -23,6 +23,7 @@ assign [class="Firefox"] $ws2
 #assign [class="Subl"] $ws3
 assign [class="Atom"] $ws3
 assign [class="Slack"] $ws4
+for_window[class=Connman-gtk] floating enable
 
 # fonts
 font pango:Awa Sans Mono 13 
