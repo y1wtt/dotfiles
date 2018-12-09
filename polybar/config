@@ -39,7 +39,7 @@ font-2 = Noto Sans Symbols2:size=12
 
 modules-left = i3
 modules-center = 
-modules-right =cpu memory wlan eth volume battery temperature date
+modules-right =cpu memory wlan eth volume battery0 battery1 temperature date
 
 tray-position = right
 tray-padding = 1
@@ -212,9 +212,41 @@ bar-volume-empty = ―
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/battery]
+[module/battery0]
 type = internal/battery
 battery = BAT0
+adapter = AC
+full-at = 95
+
+format-charging = <animation-charging> <label-charging>
+format-charging-overline = ${colors.enable}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-overline = ${colors.enable}
+
+format-full-prefix = "  "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-overline = ${colors.enable}
+
+ramp-capacity-0 = "  " 
+ramp-capacity-1 = "  " 
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  " 
+ramp-capacity-4 = "  "
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
 adapter = AC
 full-at = 95
 
