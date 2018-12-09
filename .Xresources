@@ -5,12 +5,12 @@ rofi.show:combi
 
 rofi.color-enabled: true
 
-!					background	  boder
-rofi.color-window :argb:af333333, #333333
-!					background		fg 			bg+alt	 focusbg  focusfg
-rofi.color-normal :argb:00333333, #ffffff,argb:00333333, argb:00333333, #ff9944
-rofi.color-active :argb:00333333, #ffffff,argb:00333333, argb:00333333, #ff9944
-rofi.color-urgent :argb:00333333, #ffffff,argb:00333333, argb:00333333, #ff9944
+!						background	 		boder
+rofi.color-window	:argb:af333333,	#333333
+!						background			fg 		bg+alt	 		focusbg			focusfg
+rofi.color-normal	:argb:00333333,	#ffffff,	argb:00333333, argb:00333333, #ff9944
+rofi.color-active	:argb:00333333,	#ffffff,	argb:00333333, argb:00333333, #ff9944
+rofi.color-urgent	:argb:00333333,	#ffffff,	argb:00333333, argb:00333333, #ff9944
 
 rofi.separator-style: none
 rofi.sidebar-mode: true
