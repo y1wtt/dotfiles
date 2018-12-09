@@ -30,7 +30,7 @@ font pango:Awa Sans Mono 13
 
 #keys
 #Launch Terminal
-bindsym $mod+Return exec sakura
+bindsym $mod+Return exec alacritty
 
 #Quits
 bindsym $mod+q kill
