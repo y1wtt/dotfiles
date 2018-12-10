@@ -138,7 +138,7 @@ exec --no-startup-id fcitx-autostart
 exec --no-startup-id sh ~/.config/script/start.sh
 exec --no-startup-id "compton --config .config/compton/compton.conf"
 
-exec --no-startup-id i3-msg 'workspace$ws3;exec subl'
+#exec --no-startup-id i3-msg 'workspace$ws3;exec subl'
 exec --no-startup-id firefox
 exec --no-startup-id slack
 exec --no-startup-id i3-msg 'workspace$ws1;exec alacritty'
