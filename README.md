@@ -1,7 +1,7 @@
 # awataki's dotfiles  
 ## description
 - awataki dotfiles
--cd ~ && ln -sf .config/.Xresources
+- `cd ~ && ln -sf .config/.Xresources`
 
 ## future
 - use install shell
