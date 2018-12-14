@@ -1,3 +1,8 @@
-# .config
-雑多な設定ファイル置き場<br>
-.configのいろんな設定を置いていく予定
+# awataki's dotfiles  
+## description
+- awataki dotfiles
+- `cd ~ && ln -sf .config/.Xresources`
+
+## future
+- use install shell
+- use chef
