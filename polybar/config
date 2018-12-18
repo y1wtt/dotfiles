@@ -263,8 +263,11 @@ label-charging-foreground=${colors.foreground-alt}
 label-charging-background=${colors.background-alt}
 label-charging =" %percentage%%  "
 label-discharging =" %percentage%%  "
+label-full =" %percentage%%  "
 label-discharging-foreground=${colors.foreground-alt}
 label-discharging-background=${colors.background-alt}
+label-full-foreground=${colors.foreground-alt}
+label-full-background=${colors.background-alt}
 
 format-full-prefix = "  "
 format-full-prefix-foreground = ${colors.foreground-alt}
