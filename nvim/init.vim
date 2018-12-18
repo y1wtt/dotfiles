@@ -79,9 +79,9 @@ nnoremap k gk
 " 不可視文字を可視
 "set list listchars=tab:\ \:
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=3
+set tabstop=4
 " 行頭でのTab文字の表示幅
-set shiftwidth=3
+set shiftwidth=4
 
 "大文字小文字を区別しないで検索
 set ignorecase

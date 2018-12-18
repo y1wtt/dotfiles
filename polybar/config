@@ -1,117 +1,136 @@
 [colors]
-background = #90303030
-background-alt = #60000000
-foreground = #dfdfdf
-foreground-alt = #dfdfdf
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
-yayoi = #ff9944
-enable = ${colors.yayoi}
-disable = #999999
+background		= #000000
+background-alt  = #777777
+foreground		= ${colors.background-alt}
+foreground-alt  = ${colors.background}
+alert			= #ff0000
+enable			= ${colors.foreground}
+disable			= #999999
 
 [bar/top]
-width = 100%
-height = 30
-radius = 0
-fixed-center = true
+width 			= 100%
+height			= 30
+radius			= 0
+monitor 		= ${env:MONITOR:}
+fixed-center	= true
+cursor-click	= pointer
+cursor-scroll	= ns-resize
+enable-ipc		= true
 
-monitor = ${env:MONITOR:}
+#colors
+background		= ${colors.background}
+foreground		= ${colors.foreground}
+line-color 		= #f94
+border-color	= #000000
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+#layout
+line-size		= 2
+border-size 	= 1
+padding-left 	= 0
+padding-right	= 0
 
-line-size = 2
-line-color = #f94
+#fonts
+font-0	= Awa Sans Mono:size=12
+font-1	= FontAwesome:size=12
+font-2	= Noto Sans Symbols2:size=12
+font-3	= Noto Mono for Powerline:size=60
 
-border-size = 0 
-border-color = #00000000
+#modules
+modules-left 		= i3
+modules-center 		= 
+modules-right 		= cpu arrow2 memory arrow wlan arrow2 eth arrow volume arrow2 battery arrow temperature arrow2 date arrow
+module-margin-left 	= 0
+module-margin-right = 0
 
-padding-left = 0
-padding-right = 0
+#systemtray
+tray-position 		= right
+tray-padding		= 1
+tray-transparent 	= false
 
-module-margin-left = 0
-module-margin-right = 1
-
-font-0 = Awa Sans Mono:size=12
-font-1 = FontAwesome:size=12
-font-2 = Noto Sans Symbols2:size=12
-
-modules-left = i3
-modules-center = 
-modules-right =cpu memory wlan eth volume battery0 battery1 temperature date
-
-tray-position = right
-tray-padding = 1
-tray-transparent = true
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-enable-ipc = true
 
 
 
 [module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-wrapping-scroll = false
-index-sort = true
+type 	= internal/i3
+format	= <label-state> <label-mode>
 
-; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.background}
-label-focused-overline = ${colors.enable}
-label-focused-padding = 2
+#kayout
+wrapping-scroll	= false
+enable-scroll	= false
+index-sort		= false
 
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-foreground = ${colors.foreground}
-label-unfocused-background = ${colors.background}
-label-unfocused-padding = 2
+# focused = Active workspace on focused monitor
+label-focused				= %index%
+label-focused-foreground	= ${colors.foreground}
+label-focused-background	= ${colors.background}
+label-focused-overline		= ${colors.enable}
+label-focused-padding		= 1
 
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${colors.background}
-label-urgent-padding = 2
+# unfocused = Inactive workspace on any monitor
+label-unfocused				= %index%
+label-unfocused-foreground	= ${colors.foreground}
+label-unfocused-background	= ${colors.background}
+label-unfocused-padding		= 1
+
+# urgent = Workspace with urgency hint set
+label-urgent				= %index%
+label-urgent-background		= ${colors.background}
+label-urgent-padding		= 1
 
 
-label-visible = %index%
-label-visible-foreground = ${colors.foreground}
-label-visible-background = ${colors.background}
-label-visible-overline = ${colors.disable}
-label-visible-padding = 2
+label-visible				= %index%
+label-visible-foreground	= ${colors.foreground}
+label-visible-background	= ${colors.background}
+label-visible-overline		= ${colors.disable}
+label-visible-padding		= 1
 
 [module/mpd]
-type = internal/mpd
+type 		  = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause =
-icon-next = 
+icon-prev	=
+icon-stop 	=
+icon-play	=
+icon-pause	=
+icon-next	=
 
-label-song-maxlen = 25
+label-song-maxlen 	= 25
 label-song-ellipsis = true
+
+[module/arrow]
+type 				= custom/text
+content 			= ""
+content-font 		= 2
+content-foreground 	= ${colors.foreground-alt}
+content-background 	= ${colors.background-alt}
+
+[module/arrow2]
+type = custom/text
+content 			= ""
+content-font 		= 2
+content-background 	= ${colors.foreground-alt}
+content-foreground 	= ${colors.background-alt}
 
 
 [module/cpu]
 type = internal/cpu
 interval = 1
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
-format-overline = ${colors.enable}
-label = %percentage%%
+format-prefix-foreground = ${colors.foreground}
+format-prefix-background = ${colors.background}
+label = "%percentage:3%%  "
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
 
 [module/memory]
 type = internal/memory
 interval = 1
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
-format-overline = ${colors.enable}
-label = %gb_used%
+format-prefix-background = ${colors.background-alt}
+label = "%gb_used%  "
+label-foreground = ${colors.foreground-alt}
+label-background = ${colors.background-alt}
 
 [module/wlan]
 type = internal/network
@@ -120,66 +139,71 @@ interval = 1
 
 format-connected = <label-connected>
 format-connected-prefix = "  "
-format-connected-overline = ${colors.enable}
-label-connected = %essid% : %local_ip%
-
-
-
-label-disconnected = %ifname% disconnected
-format-disconnected-overline = ${colors.disable}
+format-connected-prefix-background = ${colors.background}
+#format-connected-overline = ${colors.enable}
+label-connected = "%essid:14%  "
+label-disconnected = "%ifname:4% Disconnected  "
+label-connected-background = ${colors.background}
+label-disconnected-background = ${colors.background}
+#format-disconnected-overline = ${colors.disable}
 
 ramp-signal-foreground = ${colors.foreground-alt}
+
 
 [module/eth]
 type = internal/network
 interface = eth0
 interval = 1
 
-format-connected-overline = ${colors.enable}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %linkspeed:8% : %local_ip:12%
+#format-connected-overline = ${colors.enable}
+#format-connected-prefix = " "
+#format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = "%linkspeed:7% : %local_ip:8%  "
+label-connected-foreground = ${colors.foreground-alt}
+label-connected-background = ${colors.background-alt}
 
 ;format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = #999999
-label-disconnected = %ifname% disconnected
-format-disconnected-overline = ${colors.disable}
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected = "%ifname% disconnected  "
+label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-background = ${colors.background-alt}
 
 [module/date]
 type = internal/date
 interval = 1
 
 #date =
-date = " %Y/%m/%d"
+date = "%m/%d"
 
 #time = %H:%M
 time = %H:%M:%S
 
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
-format-overline = ${colors.enable}
+format-prefix-background = ${colors.background-alt}
 
-label = %date% %time%
+label ="%date% %time%  "
+label-foreground = ${colors.foreground-alt}
+label-background = ${colors.background-alt}
 
 [module/volume]
-type = internal/volume
+type = internal/pulseaudio
 
-format-volume-overline = ${colors.enable}
-format-muted-overline = #999999
+#format-volume-overline = ${colors.enable}
+#format-muted-overline = ${colors.disable}
 
 ; Available tags:
 ;   <label-volume> (default)
 ;   <ramp-volume>
 ;   <bar-volume>
-format-volume = <ramp-volume> <bar-volume>
+format-volume = "<ramp-volume><label-volume>"
 
 ; Available tags:
 ;   <label-muted> (default)
 ;   <ramp-volume>
 ;   <bar-volume>
-format-muted = <label-muted> <bar-volume>
+format-muted = "<label-muted>"
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -187,85 +211,73 @@ format-muted = <label-muted> <bar-volume>
 
 ; Available tokens:
 ;   %percentage% (default)
-label-muted = 🔇
-label-muted-foreground = #ff0000
+label-muted = "🔇 %percentage:3%%  "
+label-muted-foreground = ${colors.foreground}
+label-muted-background = ${colors.foreground-alt}
+
+label-volume = " %percentage:3%%  "
+label-volume-foreground = ${colors.foreground}
+label-volume-background = ${colors.foreground-alt}
 
 ; Only applies if <ramp-volume> is used
-ramp-volume-0 = 🔈
+ramp-volume-0 = "🔈"
+ramp-volume-0-foreground = ${colors.foreground}
+ramp-volume-0-background = ${colors.foreground-alt}
 ramp-volume-1 = 🔉
+ramp-volume-1-foreground = ${colors.foreground}
+ramp-volume-1-background = ${colors.foreground-alt}
 ramp-volume-2 = 🔊
+ramp-volume-2-foreground = ${colors.foreground}
+ramp-volume-2-background = ${colors.foreground-alt}
 
 ; If defined, it will replace <ramp-volume> when
 ; headphones are plugged in to `headphone_control_numid`
 ; If undefined, <ramp-volume> will be used for both
 ; Only applies if <ramp-volume> is used
-;ramp-headphones-0 = 
+;ramp-headphones-0 =
 
-bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.enable}
+bar-volume-width = 7
+bar-volume-foreground-0 = #f00
+bar-volume-foreground-1 = #f94
+bar-volume-foreground-2 = #afa
 bar-volume-gradient = true
-bar-volume-indicator = |
+bar-volume-indicator = "#"
+bar-volume-indicator-foreground = ${colors.foreground}
 bar-volume-indicator-font = 2
-bar-volume-fill = ― 
+bar-volume-fill = #
 bar-volume-fill-font = 2
-bar-volume-empty = ―
+bar-volume-empty = #
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = ${colors.enable}
 
-[module/battery0]
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 95
-
-format-charging = <animation-charging> <label-charging>
-format-charging-overline = ${colors.enable}
-
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-overline = ${colors.enable}
-
-format-full-prefix = "  "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-overline = ${colors.enable}
-
-ramp-capacity-0 = "  " 
-ramp-capacity-1 = "  " 
-ramp-capacity-2 = "  "
-ramp-capacity-3 = "  " 
-ramp-capacity-4 = "  "
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-
-animation-charging-0 = "  "
-animation-charging-1 = "  "
-animation-charging-2 = "  "
-animation-charging-3 = "  "
-animation-charging-4 = "  "
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-[module/battery1]
+[module/battery]
 type = internal/battery
 battery = BAT1
 adapter = AC
 full-at = 95
 
-format-charging = <animation-charging> <label-charging>
-format-charging-overline = ${colors.enable}
+format-charging = "<animation-charging><label-charging>"
+format-discharging = "<ramp-capacity><label-discharging>"
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-overline = ${colors.enable}
+label-charging-foreground=${colors.foreground-alt}
+label-charging-background=${colors.background-alt}
+label-charging =" %percentage%%  "
+label-discharging =" %percentage%%  "
+label-discharging-foreground=${colors.foreground-alt}
+label-discharging-background=${colors.background-alt}
 
 format-full-prefix = "  "
 format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-background = ${colors.background-alt}
 format-full-overline = ${colors.enable}
 
-ramp-capacity-0 = "  " 
-ramp-capacity-1 = "  " 
+ramp-capacity-0 = "  "
+ramp-capacity-1 = "  "
 ramp-capacity-2 = "  "
-ramp-capacity-3 = "  " 
+ramp-capacity-3 = "  "
 ramp-capacity-4 = "  "
 ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-background = ${colors.background-alt}
 
 
 animation-charging-0 = "  "
@@ -274,59 +286,32 @@ animation-charging-2 = "  "
 animation-charging-3 = "  "
 animation-charging-4 = "  "
 animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-background = ${colors.background-alt}
 animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
-warn-temperature = 80
+thermal-zone 		= 0
+warn-temperature 	= 70
 
-format = <ramp> <label>
-format-overline = ${colors.enable}
+format 		= <ramp> <label>
 format-warn = <ramp> <label-warn>
-format-warn-overline = ${colors.enable}
 
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label				= "%temperature-c%  "
+label-foreground	= ${colors.foreground}
+label-background	= ${colors.background}
 
-ramp-0 = "  "
-ramp-1 = "  "
-ramp-2 = "  "
-ramp-3 = "  "
-ramp-4 = "  "
-ramp-foreground = ${colors.foreground-alt}
+label-warn				= "%temperature-c%  "
+label-warn-foreground 	= ${colors.alert}
+label-warn-background 	= ${colors.background}
 
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = open
-label-open-foreground = ${colors.secondary}
-label-close = cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-
+ramp-0 			= "  "
+ramp-1 			= "  "
+ramp-2 			= "  "
+ramp-3 			= "  "
+ramp-4 			= "  "
+ramp-foreground = ${colors.foreground}
+ramp-background = ${colors.background}
 
 [settings]
 screenchange-reload = true
