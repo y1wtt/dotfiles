@@ -1,6 +1,6 @@
 [colors]
-background		= #000000
-background-alt  = #777777
+background  	= #212121
+background-alt	= #9E9E9E
 foreground		= ${colors.background-alt}
 foreground-alt  = ${colors.background}
 alert			= #ff0000
