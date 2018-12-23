@@ -2,7 +2,7 @@
 background  	= #212121
 background-alt	= #101010
 foreground		= #9a9a9a
-foreground-alt  = #9a9a9a
+foreground-alt  = ${colors.foreground}
 alert			= #ff0000
 enable			= ${colors.foreground}
 disable			= #999999
@@ -54,31 +54,37 @@ tray-transparent 	= false
 type 	= internal/i3
 format	= <label-state> <label-mode>
 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-default = 
+
 #kayout
 wrapping-scroll	= false
 enable-scroll	= false
 index-sort		= false
 
 # focused = Active workspace on focused monitor
-label-focused				= %index%
+label-focused				= %name% %icon%
 label-focused-foreground	= ${colors.foreground}
 label-focused-background	= ${colors.background}
 label-focused-overline		= ${colors.enable}
 label-focused-padding		= 1
 
 # unfocused = Inactive workspace on any monitor
-label-unfocused				= %index%
+label-unfocused				= %name% %icon%
 label-unfocused-foreground	= ${colors.foreground}
 label-unfocused-background	= ${colors.background}
 label-unfocused-padding		= 1
 
 # urgent = Workspace with urgency hint set
-label-urgent				= %index%
+label-urgent				= %name%
 label-urgent-background		= ${colors.background}
 label-urgent-padding		= 1
 
 
-label-visible				= %index%
+label-visible				= %name%
 label-visible-foreground	= ${colors.foreground}
 label-visible-background	= ${colors.background}
 label-visible-overline		= ${colors.disable}
