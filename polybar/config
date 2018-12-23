@@ -1,8 +1,8 @@
 [colors]
 background  	= #212121
-background-alt	= #9E9E9E
-foreground		= ${colors.background-alt}
-foreground-alt  = ${colors.background}
+background-alt	= #101010
+foreground		= #9a9a9a
+foreground-alt  = #9a9a9a
 alert			= #ff0000
 enable			= ${colors.foreground}
 disable			= #999999
@@ -38,7 +38,7 @@ font-3	= Noto Mono for Powerline:size=60
 #modules
 modules-left 		= i3
 modules-center 		= 
-modules-right 		= xwindow arrow2 memory arrow wlan arrow2 eth arrow volume arrow2 avg-battery arrow temperature arrow2 date arrow
+modules-right 		= cpu arrow2 memory arrow wlan arrow2 eth arrow volume arrow2 avg-battery arrow temperature arrow2 date arrow
 module-margin-left 	= 0
 module-margin-right = 0
 
@@ -101,14 +101,14 @@ label-song-ellipsis = true
 type 				= custom/text
 content 			= ""
 content-font 		= 2
-content-foreground 	= ${colors.foreground-alt}
+content-foreground 	= ${colors.background}
 content-background 	= ${colors.background-alt}
 
 [module/arrow2]
 type = custom/text
 content 			= ""
 content-font 		= 2
-content-background 	= ${colors.foreground-alt}
+content-background 	= ${colors.background}
 content-foreground 	= ${colors.background-alt}
 
 
@@ -190,7 +190,7 @@ label-background = ${colors.background-alt}
 [module/volume]
 type = internal/pulseaudio
 
-#format-volume-overline = ${colors.enable}
+#format-volume-overline = ${colors.ee}
 #format-muted-overline = ${colors.disable}
 
 ; Available tags:
@@ -213,22 +213,22 @@ format-muted = "<label-muted>"
 ;   %percentage% (default)
 label-muted = "🔇 %percentage:3%%  "
 label-muted-foreground = ${colors.foreground}
-label-muted-background = ${colors.foreground-alt}
+label-muted-background = ${colors.background}
 
 label-volume = " %percentage:3%%  "
 label-volume-foreground = ${colors.foreground}
-label-volume-background = ${colors.foreground-alt}
+label-volume-background = ${colors.background}
 
 ; Only applies if <ramp-volume> is used
 ramp-volume-0 = "🔈"
 ramp-volume-0-foreground = ${colors.foreground}
-ramp-volume-0-background = ${colors.foreground-alt}
+ramp-volume-0-background = ${colors.background}
 ramp-volume-1 = 🔉
 ramp-volume-1-foreground = ${colors.foreground}
-ramp-volume-1-background = ${colors.foreground-alt}
+ramp-volume-1-background = ${colors.background}
 ramp-volume-2 = 🔊
 ramp-volume-2-foreground = ${colors.foreground}
-ramp-volume-2-background = ${colors.foreground-alt}
+ramp-volume-2-background = ${colors.background}
 
 ; If defined, it will replace <ramp-volume> when
 ; headphones are plugged in to `headphone_control_numid`
