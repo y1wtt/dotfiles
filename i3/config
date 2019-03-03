@@ -23,7 +23,7 @@ assign [class="Firefox"] $ws2
 #assign [class="Subl"] $ws3
 assign [class="Atom"] $ws3
 assign [class="Slack"] $ws4
-for_window[class=Connman-gtk] floating enable
+for_window[class="Nm-connection-editor"] floating enable
 
 # fonts
 font pango:Awa Sans Mono 13 
@@ -136,7 +136,6 @@ exec --no-startup-id "amixer set Capture mute "
 #StartUps(next:to Script)
 exec --no-startup-id fcitx-autostart
 exec --no-startup-id sh ~/.config/script/start.sh
-exec --no-startup-id "compton --config .config/compton/compton.conf"
 
 #exec --no-startup-id i3-msg 'workspace$ws3;exec subl'
 exec --no-startup-id firefox
