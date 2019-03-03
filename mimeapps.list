@@ -14,6 +14,8 @@ application/x-extension-xht=userapp-Firefox-OS72TZ.desktop
 text/markdown=atom.desktop
 image/jpeg=mcomix.desktop
 inode/directory=pcmanfm.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-PVDBXZ.desktop
+message/rfc822=userapp-Thunderbird-PVDBXZ.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Firefox-IHVETZ.desktop;userapp-Firefox-OS72TZ.desktop;
@@ -28,5 +30,15 @@ application/xhtml+xml=userapp-Firefox-IHVETZ.desktop;userapp-Firefox-OS72TZ.desk
 application/x-extension-xhtml=userapp-Firefox-IHVETZ.desktop;userapp-Firefox-OS72TZ.desktop;
 application/x-extension-xht=userapp-Firefox-IHVETZ.desktop;userapp-Firefox-OS72TZ.desktop;
 image/png=feh.desktop;
-image/jpeg=feh.desktop;mcomix.desktop;
+image/jpeg=mcomix.desktop;feh.desktop;
 text/markdown=Haroopad.desktop;
+application/zip=org.kde.ark.desktop;Thunar.desktop;
+text/css=vim.desktop;
+image/gif=mcomix.desktop;gimp.desktop;
+application/sql=vim.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-PVDBXZ.desktop;
+message/rfc822=userapp-Thunderbird-PVDBXZ.desktop;
+application/pdf=userapp-Firefox-IHVETZ.desktop;
+video/mp4=vlc.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+video/x-ms-wmv=vlc.desktop;
