@@ -6,3 +6,7 @@
 ## future
 - use install shell
 - use chef
+
+# Author
+awataki
+https://awataki.me
