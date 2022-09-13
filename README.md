@@ -1,12 +1,11 @@
-# awataki's dotfiles  
-## description
-- awataki dotfiles
+# dotfiles  
+## setup
 - `cd ~ && ln -sf .config/.Xresources`
 
-## future
-- use install shell
+## todo
+- install shell
 - use chef
 
 # Author
-awataki
-https://awataki.me
+y1wtt
+https://awtk.sh
